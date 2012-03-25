@@ -192,7 +192,15 @@ function settitle()
 
 function setupeclipse()
 {
-    ln -s development/ide/eclipse/.classpath .classpath
+    local CP LINK
+    CP=development/ide/eclipse/.classpath
+    LINK=.classpath
+
+    if [ -e $LINK ]; then
+        rm $LINK
+    fi
+
+    ln -s $CP $LINK
 }
 
 function addcompletions()
