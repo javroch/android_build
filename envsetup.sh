@@ -190,6 +190,11 @@ function settitle()
     fi
 }
 
+function setupeclipse()
+{
+    ln -s development/ide/eclipse/.classpath .classpath
+}
+
 function addcompletions()
 {
     local T dir f
@@ -1071,3 +1076,4 @@ done
 unset f
 
 addcompletions
+setupeclipse
