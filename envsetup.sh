@@ -215,6 +215,19 @@ function settitle()
     fi
 }
 
+function setupeclipse()
+{
+    local CP LINK
+    CP=development/ide/eclipse/.classpath
+    LINK=.classpath
+
+    if [ -e $LINK ]; then
+        rm $LINK
+    fi
+
+    ln -s $CP $LINK
+}
+
 function addcompletions()
 {
     local T dir f
@@ -1109,3 +1122,4 @@ done
 unset f
 
 addcompletions
+setupeclipse
